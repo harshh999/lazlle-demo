@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazlle - AI-Powered QR Ordering System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-teal-600">LAZLLE</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#how-it-works" class="text-gray-700 hover:text-teal-600">How It Works</a>
+                    <a href="#features" class="text-gray-700 hover:text-teal-600">Features</a>
+                    <a href="#for-restaurants" class="text-gray-700 hover:text-teal-600">For Restaurants</a>
+                    <a href="#for-customers" class="text-gray-700 hover:text-teal-600">For Customers</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-teal-600">Testimonials</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition duration-300">Get Started</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#how-it-works" class="block py-2 text-gray-700 hover:text-teal-600">How It Works</a>
+                <a href="#features" class="block py-2 text-gray-700 hover:text-teal-600">Features</a>
+                <a href="#for-restaurants" class="block py-2 text-gray-700 hover:text-teal-600">For Restaurants</a>
+                <a href="#for-customers" class="block py-2 text-gray-700 hover:text-teal-600">For Customers</a>
+                <a href="#testimonials" class="block py-2 text-gray-700 hover:text-teal-600">Testimonials</a>
+                <a href="#contact" class="block mt-2 bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition duration-300 text-center">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-float">Scan. Order. Enjoy.</h1>
+            <p class="text-xl md:text-2xl mb-10">The smarter way to dine.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition duration-300">Get Started</a>
+                <a href="#how-it-works" class="bg-white hover:bg-gray-100 text-teal-600 px-8 py-4 rounded-full text-lg font-semibold transition duration-300">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">How Lazlle Works</h2>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                <!-- Step 1 -->
+                <div class="flex-1 text-center px-6 py-8 bg-white rounded-xl shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="bg-teal-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-qrcode text-teal-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">1. Scan QR Code</h3>
+                    <p class="text-gray-600">Simply scan the QR code at your table to access the restaurant's full menu instantly.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex-1 text-center px-6 py-8 bg-white rounded-xl shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="bg-teal-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-utensils text-teal-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">2. Browse & Order</h3>
+                    <p class="text-gray-600">View the digital menu with photos, descriptions, and personalized recommendations.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex-1 text-center px-6 py-8 bg-white rounded-xl shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="bg-teal-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-receipt text-teal-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">3. Track & Pay</h3>
+                    <p class="text-gray-600">Get real-time order updates and pay seamlessly when you're ready to leave.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">Powerful Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-teal-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Menu Assistant</h3>
+                    <p class="text-gray-600">Our AI suggests dishes based on your preferences, dietary needs, and past orders.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-map-marker-alt text-teal-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Real-time Tracking</h3>
+                    <p class="text-gray-600">See exactly where your order is - from kitchen prep to table delivery.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calculator text-teal-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">One-click Billing</h3>
+                    <p class="text-gray-600">Restaurants can process payments instantly with integrated POS systems.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-fire text-teal-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Kitchen Integration</h3>
+                    <p class="text-gray-600">Orders go straight to the kitchen display system, reducing errors and wait times.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Restaurants -->
+    <section id="for-restaurants" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Restaurant staff" class="rounded-xl shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800">Benefits for Restaurants</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-teal-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-money-bill-wave text-teal-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Cost Savings</h3>
+                                <p class="text-gray-600">Reduce labor costs by up to 30% with fewer waitstaff needed for order taking.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-teal-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-bolt text-teal-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Faster Service</h3>
+                                <p class="text-gray-600">Turn tables faster with instant order transmission to the kitchen.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-teal-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-smile text-teal-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Better Experience</h3>
+                                <p class="text-gray-600">Happy customers spend 20% more on average with our frictionless ordering.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="mt-8 inline-block bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition duration-300">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Customers -->
+    <section id="for-customers" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Happy customer" class="rounded-xl shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800">Features for Customers</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <i class="fas fa-filter text-teal-600 text-xl mb-3"></i>
+                            <h3 class="text-lg font-semibold mb-2">Dietary Filters</h3>
+                            <p class="text-gray-600">Easily find gluten-free, vegan, or other special diet options.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <i class="fas fa-coins text-teal-600 text-xl mb-3"></i>
+                            <h3 class="text-lg font-semibold mb-2">Budget Suggestions</h3>
+                            <p class="text-gray-600">Set a spending limit and get recommendations within your budget.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <i class="fas fa-fire-alt text-teal-600 text-xl mb-3"></i>
+                            <h3 class="text-lg font-semibold mb-2">Nutrition Tracking</h3>
+                            <p class="text-gray-600">See calorie counts and nutritional info for every menu item.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <i class="fas fa-heart text-teal-600 text-xl mb-3"></i>
+                            <h3 class="text-lg font-semibold mb-2">Favorites List</h3>
+                            <p class="text-gray-600">Save your go-to orders for quick reordering next time.</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="text-gray-600 mb-4">Available on both iOS and Android</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center gap-2">
+                                <i class="fab fa-apple text-xl"></i>
+                                <span>App Store</span>
+                            </a>
+                            <a href="#" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center gap-2">
+                                <i class="fab fa-google-play text-xl"></i>
+                                <span>Play Store</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">What People Are Saying</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">Café Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Lazlle has transformed our operations. We've reduced order errors to zero and increased table turnover by 25%. The best investment we've made this year."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">Restaurant Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Our staff can focus on hospitality rather than order taking. Customers love the convenience, and we've seen a 15% increase in average order value."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Emma Rodriguez</h4>
+                            <p class="text-gray-500 text-sm">Frequent Diner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"As someone with dietary restrictions, I love being able to filter the menu instantly. No more awkward conversations with waitstaff about ingredients!"</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-teal-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Dining Experience?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">Join hundreds of restaurants and thousands of diners who are enjoying seamless ordering with Lazlle.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-white hover:bg-gray-100 text-teal-600 px-8 py-4 rounded-full text-lg font-semibold transition duration-300">Try Lazlle Now</a>
+                <a href="#contact" class="bg-transparent hover:bg-teal-700 border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold transition duration-300">Book a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">LAZLLE</h3>
+                    <p class="text-gray-400 mb-6">Revolutionizing the dining experience with AI-powered QR ordering technology.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">For Restaurants</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Integration</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">For Diners</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Download App</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Find Restaurants</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Stay Updated</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and features.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none w-full">
+                        <button type="submit" class="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="mt-6">
+                        <h5 class="font-semibold mb-2">Contact Us</h5>
+                        <p class="text-gray-400">hello@lazlle.com</p>
+                        <p class="text-gray-400">+1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 Lazlle. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const featureCards = document.querySelectorAll('.feature-card');
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            
+            featureCards.forEach(card => {
+                if (isElementInViewport(card)) {
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+            
+            testimonialCards.forEach(card => {
+                if (isElementInViewport(card)) {
+                    card.style.opacity = '1';
+                }
+            });
+        };
+        
+        const isElementInViewport = (el) => {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
